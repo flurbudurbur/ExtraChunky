@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "${id}",
+  "version": "${version}",
+  "name": "${name}",
+  "description": "${description}",
+  "authors": ["${author}"],
+  "contact": {
+    "homepage": "https://github.com/flur/extrachunky",
+    "repo": "https://github.com/flur/extrachunky",
+    "issues": "https://github.com/flur/extrachunky/issues"
+  },
+  "license": "GPL-3.0",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["dev.flur.extrachunky.ExtraChunkyFabric"]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "fabric-api": "*",
+    "minecraft": ">=1.21",
+    "java": ">=21",
+    "chunky": "*"
+  }
+}

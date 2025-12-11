@@ -1,0 +1,18 @@
+name: ${name}
+version: ${version}
+main: dev.flur.extrachunky.ExtraChunkyBukkit
+api-version: "1.20"
+folia-supported: true
+depend: [Chunky]
+authors: [${author}]
+description: ${description}
+commands:
+  extrachunky:
+    description: Multi-instance chunk generation coordinator
+    usage: /<command> <start|status|host|register|workers|merge|reload>
+    permission: extrachunky.command
+    aliases: [ec, exchunky]
+permissions:
+  extrachunky.command:
+    description: Allows use of ExtraChunky commands
+    default: op

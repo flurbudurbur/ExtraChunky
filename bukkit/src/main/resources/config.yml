@@ -1,0 +1,54 @@
+# ExtraChunky Configuration
+#
+# Generation settings (world, center, radius, shape) are derived from Chunky.
+# Configure them using Chunky commands:
+#   /chunky world <world>
+#   /chunky center <x> <z>
+#   /chunky radius <radius>
+#   /chunky shape <shape>
+
+# When true, use /extrachunky start manually
+# When false (default), /chunky start is automatically intercepted
+manual-start: false
+
+# Network settings
+# Port to listen on when hosting (via /extrachunky host command)
+host-port: 25580
+
+# Whether the host server should also generate chunks (as worker ID 0)
+# Set to false if you only want to coordinate workers without participating
+host-participates: true
+
+# SFTP Transfer Settings
+# Used by workers to upload generated region files to the host server
+sftp:
+  # Enable SFTP transfers (set to true on workers)
+  enabled: false
+
+  # Host server's SSH details
+  host: "your-host-server.com"
+  port: 22
+  username: "minecraft"
+
+  # Authentication method: "password" or "key"
+  auth-method: "key"
+
+  # For password authentication
+  password: ""
+
+  # For public key authentication
+  private-key-path: ""
+  private-key-passphrase: ""
+
+  # Remote path where files should be uploaded
+  # Use {world} placeholder for world name
+  remote-path: "/home/minecraft/incoming/{world}"
+
+  # Auto-transfer when generation completes
+  auto-transfer: true
+
+  # Number of retry attempts on failure
+  retry-count: 3
+
+  # ZSTD compression level (1-19, higher = better compression but slower)
+  compression-level: 3
